@@ -6,7 +6,7 @@
 /*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:37:05 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/09 09:58:11 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/12 10:43:24 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,10 @@ void sort_input(va_list args, char c)
 		ft_putstr_fd(va_arg(args, char *), 1);
 	else if (c == 'c')
 		ft_putchar_fd(va_arg(args, int), 1);
+	else if (c == 'x')
+		ft_putnbr_hex(va_arg(args, unsigned int), 0);
+	else if (c == 'X')
+		ft_putnbr_hex(va_arg(args, unsigned int), 1);
 	else if (c == '%')
 		ft_putchar_fd(c, 1);
 }
@@ -72,12 +76,10 @@ int is_percent(char a, char b)
 int	ft_print(const char *str, ...)
 {
 	va_list	args;
-	int	num_args;
-	int	i;
+	// int	num_args;
 
-	num_args = count_args(str);
+	// num_args = count_args(str);
 	va_start(args, str);
-	i = 0;
 	while (*str)
 	{
 		if (is_ph(*str, *(str + 1)) || is_percent(*str, *(str + 1)))
@@ -91,12 +93,13 @@ int	ft_print(const char *str, ...)
 			str++;
 		}
 	}
+	va_end(args);
 	return (0);
 }
 
 int	main(void)
 {
 	char my_str[] = "This is a String!!!!!!!!!";
-	ft_print("h%ii%si%c %i, %%i \n", -2147483648, my_str, 'y', 88);
-	printf("h%lii%si%c %i, %%i \n", -2147483648, my_str, 'y', 88);
+	ft_print("h%ii%si%c %i, %%i %X\n", -2147483648, my_str, 'y', 88, 1234948);
+	printf("h%lii%si%c %i, %%i %X\n", -2147483648, my_str, 'y', 88, 1234948);
 }
