@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:37:05 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/12 10:43:24 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/13 17:55:25 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_prinft.h"
-#include "libft.h"
+#include "ft_printf.h"
+#include "./libft/libft.h"
 #include <stdarg.h>
 #include <unistd.h>
 
@@ -45,7 +45,7 @@ int	count_args(const char *str)
 
 void sort_input(va_list args, char c)
 {
-	if (c == 'i')
+	if (c == 'i' || c == 'd')
 		ft_putnbr_fd(va_arg(args, int), 1);
 	else if (c == 's')
 		ft_putstr_fd(va_arg(args, char *), 1);
@@ -55,6 +55,13 @@ void sort_input(va_list args, char c)
 		ft_putnbr_hex(va_arg(args, unsigned int), 0);
 	else if (c == 'X')
 		ft_putnbr_hex(va_arg(args, unsigned int), 1);
+	else if (c == 'u')
+		ft_putnbruns_fd(va_arg(args, int), 1);
+	else if (c == 'p')
+		{
+			ft_putstr_fd("0x", 1);
+			ft_putnbr_hex(va_arg(args, unsigned long long), 0);
+		}
 	else if (c == '%')
 		ft_putchar_fd(c, 1);
 }
@@ -73,7 +80,7 @@ int is_percent(char a, char b)
 	return (0);
 }
 
-int	ft_print(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	// int	num_args;
@@ -100,6 +107,9 @@ int	ft_print(const char *str, ...)
 int	main(void)
 {
 	char my_str[] = "This is a String!!!!!!!!!";
-	ft_print("h%ii%si%c %i, %%i %X\n", -2147483648, my_str, 'y', 88, 1234948);
-	printf("h%lii%si%c %i, %%i %X\n", -2147483648, my_str, 'y', 88, 1234948);
+	char *pt;
+
+	pt = my_str;
+	ft_printf("h%ii%si%c %i, %%i %x %p %u %d\n", -2147483648, my_str, 'y', 88, 1234948, pt, 2147483650, 4444);
+	printf("h%lii%si%c %i, %%i %x %p %lu %d\n", -2147483648, my_str, 'y', 88, 1234948, pt, 2147483650, 4444);
 }

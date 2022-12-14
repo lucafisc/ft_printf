@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinft.h                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:40:19 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/12 10:38:00 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/13 17:55:58 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ft_printf
-#define ft_printf
+#ifndef FT_PRINTF
+# define FT_PRINTF
+# include <stdarg.h>
 
-#include <stdarg.h>
-void ft_putnbr_hex(unsigned int n, char format);
+void ft_putnbr_hex(unsigned long long n, char format);
+int	ft_printf(const char *str, ...);
+void	ft_putnbruns_fd(unsigned int n, int fd);
+
 
 #endif

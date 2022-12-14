@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbruns_fd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 10:26:09 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/01 16:13:08 by lde-ross         ###   ########.fr       */
+/*   Created: 2022/12/13 16:57:38 by lde-ross          #+#    #+#             */
+/*   Updated: 2022/12/13 17:01:00 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putnbruns_fd(unsigned int n, int fd)
 {
-	write(fd, &c, 1);
+	char	c;
+
+	if (n <= 9)
+	{
+		c = n + '0';
+		ft_putchar_fd(c, fd);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
 }

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_hex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:32:35 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/12 10:46:33 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/13 17:56:07 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_hex(unsigned int n, char caps)
+void	ft_putnbr_hex(unsigned long long n, char caps)
 {
-	// printf("number here!: %d\n", n);
 	if (n >= 16)
 	{
 		ft_putnbr_hex(n / 16, caps);
