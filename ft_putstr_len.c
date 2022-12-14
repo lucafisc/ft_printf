@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_hex.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 10:32:35 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/14 12:14:43 by lde-ross         ###   ########.fr       */
+/*   Created: 2022/12/14 12:08:34 by lde-ross          #+#    #+#             */
+/*   Updated: 2022/12/14 12:32:22 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "libftprintf.h"
+#include "libft.h"
 
-void	ft_putnbr_hex(unsigned long long n, char caps)
+int ft_putstr_len(char *s)
 {
-	if (n >= 16)
-	{
-		ft_putnbr_hex(n / 16, caps);
-		ft_putnbr_hex(n % 16, caps);
-	}
-	else
-	{
-		if (n <= 9)
-			ft_putchar_fd((n + '0'), 1);
-		else
-		{
-			if (caps)
-				ft_putchar_fd((n - 10 + 'A'), 1);
-			else
-				ft_putchar_fd((n - 10 + 'a'), 1);
-		}
-	}
+	int i;
+
+	i = 0;
+	if (!s)
+		return ft_putstr_len("(null)");
+	while (s[i])
+		i += ft_putchar_len(s[i]);
+	return (i);
 }
