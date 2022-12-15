@@ -3,44 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:37:05 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/14 12:31:37 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/14 20:53:56 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include "libft.h"
+#include "ft_printf.h"
+#include <limits.h>
 
 int	sort_input(va_list args, char c)
 {
-	int size;
+	int		size;
+	char	*pt;
 
+	pt = NULL;
 	if (c == 'c')
 		size = ft_putchar_len(va_arg(args, int));
 	else if (c == 's')
 		size = ft_putstr_len(va_arg(args, char *));
-	else if (c == 'i')
-		size = ft_putstr_len(ft_itoa(va_arg(args, int)));
-	else if (c == 'x')
-		ft_putnbr_hex(va_arg(args, unsigned int), 0);
-	else if (c == 'X')
-		ft_putnbr_hex(va_arg(args, unsigned int), 1);
 	else if (c == '%')
 		size = ft_putchar_len(c);
+	else if (c == 'i' || c == 'd')
+	{
+		pt = ft_itoa(va_arg(args, int));
+		size = ft_putstr_len(pt);
+	}
+	else if (c == 'u')
+	{
+		pt = ft_iutoa(va_arg(args, unsigned int));
+		size = ft_putstr_len(pt);
+	}
+	else if (c == 'x')
+	{
+		pt = ft_hextoa(va_arg(args, unsigned int), 0);
+		size = ft_putstr_len(pt);
+	}
+	else if (c == 'X')
+	{
+		pt = ft_hextoa(va_arg(args, unsigned int), 1);
+		size = ft_putstr_len(pt);
+	}
 	else if (c == 'p')
 	{
-		size = ft_putstr_len("0x");
-		ft_putnbr_hex(va_arg(args, unsigned long long), 0);
+		size = ft_putptr(va_arg(args, unsigned long));
 	}
+	if (pt)
+		free(pt);
 	return (size);
 }
 
-int	ft_print(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	int	size;
+	int		size;
 
 	size = 0;
 	va_start(args, str);
@@ -59,10 +76,11 @@ int	ft_print(const char *str, ...)
 	return (size);
 }
 
-int	main(void)
-{
-	char *my_str = NULL;
-	ft_print("%s, %i", my_str, 23747843);
-	// ft_print("h%ii%si%c %i, %%i \n", -2147483648, my_str, 'y', 88);
-	// printf("h%lii%si%c %i, %%i \n", -2147483648, my_str, 'y', 88);
-}
+// int	main(void)
+// {
+// 	ft_printf("my printf:\n %p  \n", 0);
+// 	printf("real printf:\n %p  \n", 0);
+// 	// char my_str[] = "Hello world!";
+// 	// char *pt;
+// 	// pt = my_str;
+// }

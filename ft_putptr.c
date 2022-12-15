@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_len.c                                    :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 12:08:34 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/14 19:43:18 by lde-ross         ###   ########.fr       */
+/*   Created: 2022/12/14 20:43:02 by lde-ross          #+#    #+#             */
+/*   Updated: 2022/12/14 20:55:37 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr_len(char *s)
+int	ft_putptr(unsigned long pt)
 {
-	int	i;
+	int		size;
+	char	*str;
 
-	i = 0;
-	if (!s)
-		return (ft_putstr_len("(null)"));
-	while (s[i])
-		i += ft_putchar_len(s[i]);
-	return (i);
+	if (!pt)
+		size = ft_putstr_len("(nil)");
+	else
+	{
+		size = ft_putstr_len("0x");
+		str = ft_hextoa(pt, 0);
+		size += ft_putstr_len(str);
+		free(str);
+	}
+	return (size);
 }

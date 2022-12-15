@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_len.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 12:08:34 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/14 19:43:18 by lde-ross         ###   ########.fr       */
+/*   Created: 2022/11/29 10:51:08 by lde-ross          #+#    #+#             */
+/*   Updated: 2022/12/14 19:00:42 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr_len(char *s)
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	if (!s)
-		return (ft_putstr_len("(null)"));
 	while (s[i])
-		i += ft_putchar_len(s[i]);
+		i++;
 	return (i);
 }

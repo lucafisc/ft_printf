@@ -1,6 +1,4 @@
-FILES = ft_printf.c ft_putnbr_hex.c
-LIBFT = ./libft
-LIB = ./libft/libft.a
+FILES = ft_hextoa.c ft_is_placeholder.c ft_itoa.c ft_iutoa.c ft_printf.c ft_putchar_len.c ft_putstr_len.c ft_str_rev.c ft_strlen.c ft_putptr.c
 OBJECTS = $(FILES:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -8,23 +6,16 @@ NAME = libftprintf.a
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS) $(LIB)
-	cp -f $(LIB) ./$(NAME)
+$(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
-
-$(LIB):
-	cd $(LIBFT) && make
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
 	rm -f $(OBJECTS) $(B_OBJECTS)
-	cd $(LIBFT) && make clean
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f $(LIB)
-	cd $(LIBFT) && make fclean
 
 re: fclean all

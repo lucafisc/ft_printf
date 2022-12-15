@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbruns_fd.c                                  :+:      :+:    :+:   */
+/*   ft_str_rev.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/13 16:57:38 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/14 12:16:31 by lde-ross         ###   ########.fr       */
+/*   Created: 2022/12/14 17:13:38 by lde-ross          #+#    #+#             */
+/*   Updated: 2022/12/14 19:42:20 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbruns_fd(unsigned int n, int fd)
+char	*ft_str_rev(char *str)
 {
-	char	c;
+	char	temp;
+	int		len;
+	int		i;
 
-	if (n <= 9)
+	i = 0;
+	len = ft_strlen(str);
+	while (i < len / 2)
 	{
-		c = n + '0';
-		ft_putchar_fd(c, fd);
+		temp = str[i];
+		str[i] = str[len - 1 - i];
+		str[len - 1 - i] = temp;
+		i++;
 	}
-	else if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
+	return (str);
 }

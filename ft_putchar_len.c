@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_len.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 11:44:33 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/14 12:32:13 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/14 19:46:34 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include "libft.h"
+#include "ft_printf.h"
 
-int ft_putchar_len(char c)
+int	ft_putchar_len(char c)
 {
 	write(1, &c, 1);
 	return (1);
