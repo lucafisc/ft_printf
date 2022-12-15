@@ -6,7 +6,7 @@
 /*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:37:05 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/15 07:30:58 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/15 07:32:51 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int	sort_input(va_list args, char c)
 		size = ft_putstr_len(va_arg(args, char *));
 	else if (c == '%')
 		size = ft_putchar_len(c);
-	else if (c == 'p')
-		pt = ft_ptrtoa(va_arg(args, unsigned long));
 	else if (c == 'i' || c == 'd')
 		pt = ft_itoa(va_arg(args, int));
 	else if (c == 'u')
@@ -35,10 +33,12 @@ int	sort_input(va_list args, char c)
 		pt = ft_hextoa(va_arg(args, unsigned int), 0);
 	else if (c == 'X')
 		pt = ft_hextoa(va_arg(args, unsigned int), 1);
+	else if (c == 'p')
+		pt = ft_ptrtoa(va_arg(args, unsigned long));
 	if (pt)
 	{
 		size = ft_putstr_len(pt);
-	//	free(pt);
+		free(pt);
 		pt = NULL;
 	}
 	return (size);
@@ -66,11 +66,11 @@ int	ft_printf(const char *str, ...)
 	return (size);
 }
 
-// int	main(void)
-// {
-// 	ft_printf("my printf:\n %p %p \n", 0, 0);
-// 	printf("real printf:\n %p %p \n", 0, 0);
-// 	// char my_str[] = "Hello world!";
-// 	// char *pt;
-// 	// pt = my_str;
-// }
+int	main(void)
+{
+	ft_printf("my printf:\n %p %p \n", 0, 0);
+	printf("real printf:\n %p %p \n", 0, 0);
+	// char my_str[] = "Hello world!";
+	// char *pt;
+	// pt = my_str;
+}
