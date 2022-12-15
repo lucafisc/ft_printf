@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:40:19 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/14 20:56:00 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/15 07:08:59 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_itoa(int n);
 char	*ft_str_rev(char *str);
 char	*ft_hextoa(unsigned long n, char caps);
 size_t	ft_strlen(const char *s);
-int		ft_putptr(unsigned long pt);
+char	*ft_ptrtoa(unsigned long pt);
+char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
