@@ -4,7 +4,9 @@
 <img src="https://i.imgur.com/2SyDnUm.png" alt="drawing" width="120"/>
 </p>
 
-A static library that contains ft_printf, a function that mimics the original printf() function
+A static library that contains ft_printf, a function that mimics the original printf() function.
+
+External functions: `malloc` `free` `write`, `va_start` `va_arg``va_end`
 
 - [Supported conversions](#supported-conversions)
 - [How to use](#how-to-use)
