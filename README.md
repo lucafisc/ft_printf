@@ -8,8 +8,8 @@ A static library that contains ft_printf, a function that mimics the original pr
 | --- | --- | --- |
 | `%c` | Prints any character from an ASCII table | `a` |
 | `%s` | Prints an array of characters (string) | `Hello, world!` |
-| `%i` and `%d` | Prints an integer in decimal notation | -2147483648 |
-| `%u` | Prints an unsigned integer in decimal notation | `5000000000` |
+| `%i` and `%d` | Prints an integer in decimal notation | `-2147483648`|
+| `%u` | Prints an unsigned integer in decimal notation | `2147483648` |
 | `%x` | Prints an unsigned integer in hexadecimal notation (lowercase) | `8BeB0d3e` |
 | `%X` | Prints an unsigned integer in hexadecimal notation (uppercase) | `8BEB0D3E` |
 | `%p` | Prints the address of a pointer in hexadecimal notation | `0xfff000bd8` |
