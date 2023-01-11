@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-ross <lde-ross@student.42berlin.de>    +#+  +:+       +#+        */
+/*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 17:45:27 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/15 07:29:19 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:49:27 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-	int len;
-	char *pt;
-	int i;
+	int		len;
+	char	*pt;
+	int		i;
 
 	len = ft_strlen(s1) + 1;
 	pt = malloc(sizeof(char) * len);

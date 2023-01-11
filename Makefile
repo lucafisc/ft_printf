@@ -2,7 +2,7 @@ FILES = ft_hextoa.c ft_is_placeholder.c ft_itoa.c ft_iutoa.c ft_printf.c ft_putc
 OBJECTS = $(FILES:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-NAME = libftprintf.a
+NAME = ft_printf.a
 
 all: $(NAME)
 

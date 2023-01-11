@@ -6,7 +6,7 @@
 /*   By: lde-ross <lde-ross@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:23:14 by lde-ross          #+#    #+#             */
-/*   Updated: 2022/12/14 20:55:50 by lde-ross         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:48:04 by lde-ross         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	get_len_hex(unsigned long n)
 
 char	is_caps(char caps)
 {
-	if (caps)
+	if (caps == 'X')
 		return ('A');
 	else
 		return ('a');
