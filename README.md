@@ -1,6 +1,14 @@
-# ft_printf
+<h1 align="center">ft_printf</h1>
+
+<p align="center">
+<img src="https://i.imgur.com/2SyDnUm.png" alt="drawing" width="120"/>
+</p>
 
 A static library that contains ft_printf, a function that mimics the original printf() function
+
+- [Supported conversions](#supported-conversions)
+- [How to use](#how-to-use)
+- [How to test](#how-to-test)
 
 ## Supported conversions
 
@@ -15,7 +23,7 @@ A static library that contains ft_printf, a function that mimics the original pr
 | `%p` | Prints the address of a pointer in hexadecimal notation | `0xfff000bd8` |
 | `%%` | Prints the % sign | `%` |
 
-## How to use:
+## How to use
 
 First clone this repository:
 
@@ -53,7 +61,7 @@ To also remove the library run:
 make fclean
 ```
 
-## How to test it:
+## How to test
 
 Create a `main.c` file:
 
@@ -82,5 +90,5 @@ The output in the terminal should be:
 this is the string:
 Hello, world! 
 and the address of the pointer:
-0x7ff7b85054ca
+0x7ff7b85054ca // pointer address will differ
 ```
