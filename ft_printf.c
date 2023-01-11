@@ -62,11 +62,3 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (size);
 }
-
-// int	main(void)
-// {
-// 	char *pt;
-// 	char hi[] = " Hello";
-// 	pt = hi;
-// 	ft_printf("my printf:\n %p \n", pt);
-// }
