@@ -19,37 +19,37 @@ A static library that contains ft_printf, a function that mimics the original pr
 
 First clone this repository:
 
-```css
+```
 git clone git@github.com:lucafisc/ft_printf.git
 ```
 
 Enter the directory:
 
-```css
+```
 cd ft_printf
 ```
 
 Running `make` will compile the source code and create the library `ft_printf.a` :
 
-```css
+```
 make
 ```
 
 This library can be used in any program written in `C`. Don't forget to include the header to your `.c` files:
 
-```css
+```c
 #include "./ft_printf.h"
 ```
 
 To remove the object `.o` files run:
 
-```css
+```
 make clean
 ```
 
 To also remove the library run:
 
-```css
+```
 make fclean
 ```
 
@@ -72,13 +72,13 @@ int	main(void)
 
 Compile the `main.c` file with the `ft_printf.a` library and execute the program:
 
-```c
+```
 cc -Wall -Werror -Wextra main.c ft_printf.a && ./a.out
 ```
 
 The output in the terminal should be:
 
-```c
+```
 this is the string:
 Hello, world! 
 and the address of the pointer:
