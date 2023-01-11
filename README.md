@@ -65,14 +65,8 @@ int	main(void)
 {
 	char str[] = "Hello, world!";
 	char *ptr = str;
-
-	// Call the function with all the supported conversion flags
-	ft_printf("> char: %c\n> string: %s\n> integer: %i\n
-	> also an integer: %d\n> unsigned integer: %u\n
-	> unsigned integer in hexadecimal notation (lowercase): %x\n
-	> unsigned integer in hexadecimal notation (uppercase): %X\n
-	> address of a pointer: %p\n> percentage sign: %%\n", 
-	'a', str, -2147483648, 2147483647, 5000000000, 1234567890, 1234567890, ptr);
+	// Call the function with any of the supported flags
+	ft_printf("this is the string:\n%s \nand the address of the pointer:\n%p\n", str, ptr);
 }
 ```
 
@@ -85,13 +79,8 @@ cc -Wall -Werror -Wextra main.c ft_printf.a && ./a.out
 The output in the terminal should be:
 
 ```c
-> char: a
-> string: Hello, world!
-> integer: -2147483648
-> also an integer: 2147483647
-> unsigned integer: 705032704
-> unsigned integer in hexadecimal notation (lowercase): 499602d2
-> unsigned integer in hexadecimal notation (uppercase): 499602D2
-> address of a pointer: 0x7ff7bc5a94ca
-> percentage sign: %
+this is the string:
+Hello, world! 
+and the address of the pointer:
+0x7ff7b85054ca
 ```
