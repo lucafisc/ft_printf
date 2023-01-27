@@ -8,6 +8,8 @@ A static library that contains ft_printf, a function that mimics the original pr
 
 External functions: `malloc` `free` `write`, `va_start` `va_arg` `va_end`
 
+[![lde-ross's 42 ft_printf Score](https://badge42.vercel.app/api/v2/clcrkbbp700300fkxp8nykj3n/project/2916438)](https://github.com/JaeSeoKim/badge42)
+
 - [Supported conversions](#supported-conversions)
 - [How to use](#how-to-use)
 - [How to test](#how-to-test)
