@@ -6,7 +6,7 @@
 
 A static library that contains ft_printf, a function that mimics the original printf() function.
 
-External functions: `malloc` `free` `write`, `va_start` `va_arg` `va_end`
+External functions: [`malloc`](https://man7.org/linux/man-pages/man3/malloc.3.html) [`free`](https://man7.org/linux/man-pages/man1/free.1.html) [`write`](https://man7.org/linux/man-pages/man2/write.2.html) [`va_start`](https://man7.org/linux/man-pages/man3/stdarg.3.html) [`va_arg`](https://man7.org/linux/man-pages/man3/stdarg.3.html) [`va_end`](https://man7.org/linux/man-pages/man3/stdarg.3.html)
 
 [![lde-ross's 42 ft_printf Score](https://badge42.vercel.app/api/v2/clcrkbbp700300fkxp8nykj3n/project/2916438)](https://github.com/JaeSeoKim/badge42)
 
